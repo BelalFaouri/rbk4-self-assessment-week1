@@ -12,21 +12,22 @@ var makeHashTable = function() {
         //your code is here
         var index=hashFn(key, max)
         var bucket = this._storage[index];
-
+        var tuple=[key,value];
         if(!bucket){
            bucket = [];
           this._storage[index]=bucket;
 
           bucket.push([key,value]);
         }else if (bucket) {
-          var tuple=[key,value];
           for (var i = 0; i < bucket.length; i++) {
             if(bucket[i][0] === key){
               return;
-            }else{
-              bucket.push(tuple);
             }
+
           }
+        }
+        else{
+          bucket.push(tuple);
         }
   }
 };

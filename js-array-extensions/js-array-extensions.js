@@ -2,8 +2,9 @@
 arrayAdditionalMethods={};
 
 arrayAdditionalMethods.first=function(){
-  reutrn this[0];
+  return this[0];
 }
 arrayAdditionalMethods.last=function(){
   return this[this.length -1 ]
 }
+_.extend(Array,arrayAdditionalMethods);
