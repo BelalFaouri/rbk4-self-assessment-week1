@@ -20,7 +20,13 @@ var makeHashTable = function() {
           bucket.push([key,value]);
         }else if (bucket) {
           var tuple=[key,value];
-          bucket.push(tuple);
+          for (var i = 0; i < bucket.length; i++) {
+            if(bucket[i][0] === key){
+              return;
+            }else{
+              bucket.push(tuple);
+            }
+          }
         }
   }
 };
