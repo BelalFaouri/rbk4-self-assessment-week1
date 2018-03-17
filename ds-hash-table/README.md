@@ -1,2 +1,2 @@
 ## Hash Table Collision Resolution
-* [ ] Implement collision resolution for the working hash table in `hashTable.js`
+* [2] Implement collision resolution for the working hash table in `hashTable.js`
