@@ -9,26 +9,45 @@ var makeHashTable = function() {
       },
 
       insert: function(key, value) {
-        //your code is here
-        var index=hashFn(key, max)
-        var bucket = this._storage[index];
-        var tuple=[key,value];
-        if(!bucket){
-           bucket = [];
-          this._storage[index]=bucket;
+        var index=hashFn(key,max);
+        var bucket =this._storage[index]
+        var tuple=[key,value]
 
-          bucket.push([key,value]);
-        }else if (bucket) {
+        if(!bucket){
+          var bucket=[];
+          bucket.push(tuple)
+          this._storage.set(index,bucket);
+
+        }
+
           for (var i = 0; i < bucket.length; i++) {
             if(bucket[i][0] === key){
-              return;
-            }
+              bucket[i][1] === value;
+            }else{
+              bucket.push(tuple);
 
+            }
           }
-        }
-        else{
-          bucket.push(tuple);
-        }
+
+        // var index=hashFn(key, max)
+        // var bucket = this._storage[index];
+        // var tuple=[key,value];
+        // if(!bucket){
+        //    bucket = [];
+        //   this._storage[index]=bucket;
+        //
+        //   bucket.push([key,value]);
+        // }else if (bucket) {
+        //   for (var i = 0; i < bucket.length; i++) {
+        //     if(bucket[i][0] === key){
+        //       return;
+        //     }
+        //
+        //   }
+        // }
+        // else{
+        //   bucket.push(tuple);
+        // }
   }
 };
 
